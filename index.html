@@ -5,29 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copilot Studio Demo</title>
     <style>
+        /* Root variables for Microsoft Fluent colors */
+        :root {
+            --microsoft-blue: #0067B8;
+            --microsoft-gray: #E1E1E1;
+            --microsoft-black: #252423;
+            --microsoft-white: #FFFFFF;
+            --microsoft-accent: #0078D4;
+            --hover-accent: #005a9e;
+        }
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--microsoft-gray);
+            color: var(--microsoft-black);
             display: flex;
             flex-direction: column;
             height: 100vh;
-            background-color: #f0f0f0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--microsoft-blue);
+            color: var(--microsoft-white);
+            padding: 20px;
+            border-bottom: 4px solid var(--microsoft-accent);
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
         }
         .welcome-container {
             text-align: center;
             padding: 20px;
-            background-color: #fff;
-            border-bottom: 2px solid #ccc;
+            background-color: var(--microsoft-white);
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        .welcome-container p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .welcome-container button {
+            background-color: var(--microsoft-accent);
+            color: var(--microsoft-white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .welcome-container button:hover {
+            background-color: var(--hover-accent);
         }
         .instruction-container {
-            padding: 10px 20px;
-            background-color: #fafafa;
-            border-top: 2px solid #ccc;
             text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: var(--microsoft-white);
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .instruction-container a {
-            color: #007bff;
+            color: var(--microsoft-accent);
             text-decoration: none;
+            font-weight: bold;
         }
         .instruction-container a:hover {
             text-decoration: underline;
@@ -40,7 +93,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -48,7 +101,7 @@
         .modal-content {
             width: 80%;
             height: 80%;
-            background-color: #fff;
+            background-color: var(--microsoft-white);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -63,8 +116,8 @@
             position: absolute;
             top: 10px;
             right: 15px;
-            background-color: red;
-            color: white;
+            background-color: var(--microsoft-accent);
+            color: var(--microsoft-white);
             border: none;
             border-radius: 50%;
             font-size: 20px;
@@ -74,13 +127,27 @@
             text-align: center;
             line-height: 30px;
         }
+        .close-btn:hover {
+            background-color: var(--hover-accent);
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="https://img.icons8.com/fluency/48/copilot.png" alt="Copilot Studio Icon">
+        <h1>Copilot Studio Demo</h1>
+    </div>
     <div class="welcome-container">
-        <h1>Welcome to Our Demo</h1>
-        <p>This is a demonstration of how you can embed Copilot Studio in a web app.</p>
-        <button onclick="openModal()">Open Copilot Studio</button>
+        <p>
+            This is an example of how you can use Copilot Studio with a document containing tables and embed it in a custom website. 
+            Click on <strong>"Open Copilot Studio Agent"</strong> to ask questions about the data stored in the Copilot Studio Agent. 
+            Please review the document linked below and find something to ask Copilot.
+        </p>
+        <p>
+            This Copilot Studio is hosted in a GCC tenant with Generative AI enabled, and the document is uploaded into the Copilot Studio Agent. 
+            The website is hosted on GitHub using GitHub Pages.
+        </p>
+        <button onclick="openModal()">Open Copilot Studio Agent</button>
     </div>
     <div class="instruction-container">
         <p>
