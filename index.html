@@ -22,12 +22,19 @@
         .iframe-container {
             flex-grow: 1;
             width: 100%;
-            overflow: hidden;
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .instruction-container {
+            padding: 10px 20px;
+            background-color: #fafafa;
+            border-top: 2px solid #ccc;
+            text-align: center;
+        }
+        .instruction-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .instruction-container a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -37,7 +44,17 @@
         <p>This is a demonstration of how you can embed Copilot Studio in a web app.</p>
     </div>
     <div class="iframe-container">
-        <iframe src="https://gcc.powerva.microsoft.us/environments/Default-5a3479ae-949c-40ec-b00d-7d82a1729e23/bots/cr48c_ohioDot/webchat?__version__=2"></iframe>
+        <iframe 
+            src="https://gcc.powerva.microsoft.us/environments/Default-5a3479ae-949c-40ec-b00d-7d82a1729e23/bots/cr48c_ohioDot/webchat?__version__=2" 
+            frameborder="0" 
+            style="width: 100%; height: 100%;">
+        </iframe>
+    </div>
+    <div class="instruction-container">
+        <p>
+            Please review the <a href="https://dot.state.oh.us/Divisions/ConstructionMgt/OnlineDocs/Specifications/2023CMS/2023_CMS_Final_to_Printer.pdf" target="_blank">2023 CMS Document</a>. 
+            After reviewing the document, feel free to ask Copilot Studio any questions about its content.
+        </p>
     </div>
 </body>
 </html>
