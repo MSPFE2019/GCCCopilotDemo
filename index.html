@@ -50,6 +50,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 800px;
         }
+        .welcome-container p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
         .welcome-container button {
             background-color: var(--microsoft-accent);
             color: var(--microsoft-white);
@@ -62,6 +66,24 @@
         }
         .welcome-container button:hover {
             background-color: var(--hover-accent);
+        }
+        .instruction-container {
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: var(--microsoft-white);
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .instruction-container a {
+            color: var(--microsoft-accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .instruction-container a:hover {
+            text-decoration: underline;
         }
         /* Modal Styles */
         .modal {
@@ -101,11 +123,6 @@
         .close-btn:hover {
             background-color: var(--hover-accent);
         }
-        @media (min-width: 768px) {
-            .modal {
-                width: 50%;
-            }
-        }
     </style>
 </head>
 <body>
@@ -115,10 +132,16 @@
     </div>
     <div class="welcome-container">
         <p>
-            This is an example of how you can use Copilot Studio with a document containing tables and embed it in a custom website. 
-            Click on <strong>"Open Copilot Studio Agent"</strong> to ask questions about the data stored in the Copilot Studio Agent.
+            This demo shows how you can use Copilot Studio with a document containing tables and embed it into a custom website. 
+            Please review the document linked below and find something to ask Copilot.
         </p>
         <button onclick="openModal()">Open Copilot Studio Agent</button>
+    </div>
+    <div class="instruction-container">
+        <p>
+            Open and review the <a href="https://dot.state.oh.us/Divisions/ConstructionMgt/OnlineDocs/Specifications/2023CMS/2023_CMS_Final_to_Printer.pdf" target="_blank">2023 CMS Document</a>. 
+            Once you have reviewed the document, ask the Copilot Studio Agent questions about its content.
+        </p>
     </div>
     
     <!-- Modal -->
